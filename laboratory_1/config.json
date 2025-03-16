@@ -1,0 +1,11 @@
+{
+    "resources_path": "./resources/",
+    "results_path": "./results/",
+    "numb_path": "numb.wav",
+    "hobbit_path": "hobbit.wav",
+    "noise_path": "pink_noise.wav",
+    "bandpass": {
+        "lowcut": 300,
+        "highcut": 3000
+    }
+}

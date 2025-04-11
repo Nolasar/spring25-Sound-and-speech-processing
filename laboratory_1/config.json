@@ -3,6 +3,7 @@
     "results_path": "./results/",
     "numb_path": "numb.wav",
     "hobbit_path": "hobbit.wav",
+    "piano_path": "piano.wav",
     "noise_path": "pink_noise.wav",
     "bandpass": {
         "lowcut": 300,

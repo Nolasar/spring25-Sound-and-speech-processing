@@ -29,10 +29,12 @@ def trim_audio(input_file:str, output_file:str, start_time:float, end_time:float
         print(f"Error: {e}")
 
 def plot_spectrogram(signal: np.ndarray, fs: int, title:str = 'Спектрограмма', save_path:str = None, 
-                     nfft: int = 1024, noverlap: int = 512):
+                     nfft: int = 1024, noverlap: int = 512,):
     mono_signal = signal
     if signal.ndim > 1:
         mono_signal = np.mean(signal, axis=1)
+
+    
 
     plt.figure()
     plt.specgram(mono_signal, NFFT=nfft, Fs=fs, noverlap=noverlap, scale='dB')
@@ -50,6 +52,7 @@ def plot_spectral_analysis(original_signal, filtered_signal, fs,
                            title="Спектральный анализ: До & После фильтра ...", save_path:str = None):
     if original_signal.ndim > 1:
         original_signal = np.mean(original_signal, axis=1)
+    if filtered_signal.ndim > 1:
         filtered_signal = np.mean(filtered_signal, axis=1)
     
     freqs, original_psd = signal.welch(original_signal, fs, nperseg=1024)
@@ -83,12 +86,14 @@ def plot_amp_freq_response_of_signals(
     fig.suptitle(title, fontsize=14)
 
     axs[0].semilogx(freqs_orig, amp_db_orig)
+    axs[0].set_xlim(20, 20000)
     axs[0].set_title("Оригинальный сигнал")
     axs[0].set_xlabel("Частота, Гц")
-    axs[0].set_ylabel("Амплитуда, дБ")
+    axs[0].set_ylabel("Амплитуда")
     axs[0].grid(True)
 
     axs[1].semilogx(freqs_filt, amp_db_filt, color="orange")
+    axs[1].set_xlim(20, 20000)
     axs[1].set_title("После фильтра")
     axs[1].set_xlabel("Частота, Гц")
     axs[1].grid(True)

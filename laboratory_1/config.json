@@ -6,7 +6,7 @@
     "piano_path": "piano.wav",
     "noise_path": "pink_noise.wav",
     "bandpass": {
-        "lowcut": 300,
-        "highcut": 3000
+        "lowcut": 1000,
+        "highcut": 4000
     }
 }

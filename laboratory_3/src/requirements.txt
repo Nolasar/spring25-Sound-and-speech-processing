@@ -1,0 +1,9 @@
+encodec==0.1.1
+g2p_en==2.1.0
+mlflow==2.22.0
+mlflow_skinny==2.22.0
+pandas==2.2.3
+torch==2.5.1+cu118
+torch==2.5.1+cu124
+torchaudio==2.5.1+cu118
+torchaudio==2.5.1+cu124
